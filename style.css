@@ -1,0 +1,203 @@
+html{
+    box-sizing: border-box;
+    font-size: 67%;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+}
+
+body{
+    font-size: 1.6rem;
+    font-family: 'Baloo Bhai 2',  sans-serif;
+}
+
+li{
+    list-style: none;
+    cursor: pointer;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+.signin-side{
+    background-image: linear-gradient(#AB75BB, #B276BA, #CD78B5, #9F7BC1);
+    background-image:-webkit-linear-gradient(#AB75BB, #B276BA, #CD78B5, #9F7BC1);
+    background-image:-moz-linear-gradient(#AB75BB, #B276BA, #CD78B5, #9F7BC1);
+    background-image:-o-linear-gradient(#AB75BB, #B276BA, #CD78B5, #9F7BC1);
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 0;
+
+}
+
+.signin-side h3{
+    color: white;
+    font-size: 2rem;
+    padding: 30px;
+    margin: 0;
+    
+}
+
+.signin-side ul{
+    padding: 20px 20px 20px 0px;
+    margin: 0;
+}
+
+.signin-side li{
+    padding: 10px 0  10px 5px;
+    ;
+}
+
+.signin-side li:hover{
+    background-image: linear-gradient( to right ,rgba(228, 76, 177, 0.842), rgba(178, 118, 186, 0.103), rgba(205, 120, 181, 0), rgba(159, 123, 193, 0));
+    background-image:-webkit-linear-gradient( to right ,rgba(228, 76, 177, 0.842), rgba(178, 118, 186, 0.103), rgba(205, 120, 181, 0), rgba(159, 123, 193, 0));
+    background-image:-moz-linear-gradient( to right ,rgba(228, 76, 177, 0.842), rgba(178, 118, 186, 0.103), rgba(205, 120, 181, 0), rgba(159, 123, 193, 0));
+    background-image:-o-linear-gradient( to right ,rgba(228, 76, 177, 0.842), rgba(178, 118, 186, 0.103), rgba(205, 120, 181, 0), rgba(159, 123, 193, 0));
+}
+
+h4{
+    display: inline;
+}
+
+.signin-side i,
+.signin-side li h4{
+    color: white;
+    margin-left: 10px ;
+    margin-right: 10px;
+}
+
+.signin-side li{
+    margin: 0;
+}
+
+.signin-side-btn li{
+    padding: 20px;
+    margin: 0;
+    color: white;
+}
+
+ul.signin-side-btn{
+    float: right;
+    padding: 0;
+    padding-left: 15px;
+}
+
+ul.signin-side-btn li:hover{
+    background-image: none;
+}
+
+ul.signin-side-btn li.active{
+    border-radius: 10px 0 0 10px;
+    background-color: white;
+    color: rgb(148, 53, 172);
+}
+
+/* Main */
+
+.signin-main.anime{
+    animation: ease-in  2s open;
+}
+
+@keyframes open{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.signin-container{
+    max-width: 450px;
+} 
+
+.signin-top h1{
+    background: -webkit-linear-gradient(#7f00ff, #e100ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-size: 7rem;
+    margin-top: 150px;
+    font-weight: bold;
+}
+
+.signin-form{
+    width: 100%;
+    display: block;
+    margin: auto;
+    
+    margin-bottom: 50px;
+}
+
+.signin-form input{
+    border: none;
+    border-bottom: 1px solid gray;
+    
+}
+
+.signin-form button{
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 7px;
+    box-shadow: 0px 15px 15px -10px rgba(119, 91, 119, 0.568);
+}
+
+.signin-form input,
+.signin-form button{
+    font-size: 1.6rem;
+}
+
+.row.center{
+    margin: 20px auto 20px auto;
+}
+
+.signin-line{
+    width: 100%;
+    height: 2px;
+    background-color: rgba(128, 128, 128, 0.527);
+    margin-top: 10px;
+}
+
+.signin-circle{
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.center .col-5 h3{
+    text-align: center;
+    font-weight: bold;
+    color: rgba(128, 128, 128, 0.856);
+
+}
+
+
+.hide{
+    display: none;
+}
+
+
+.row.center h3{
+    cursor: pointer;
+}
+@media screen and (max-width:680px){
+    h4,
+    .signin-side-h3{
+        display: none;
+    }
+    .icons li{
+        font-size: 2rem;
+        justify-content: center;
+        text-align: center;
+    }
+    .signin-side-btn li{
+        padding: 10px;
+    }
+}
