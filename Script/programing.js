@@ -51,36 +51,36 @@ for(var i=0; i<btnList.length ;i++){
     });
 }
 
-btnSubmit[0].addEventListener('click',function(){
-    if(btnActive[0].innerText==='Log in'){
-        if(email.value===null || pass.value===null){
-            alert("please fill the inputs correctly.");
-        }
-        else if(localStorage[email.value]!==pass.value){
-            alert("Username/Email or Password is not correct.");
-        }
-        else if(localStorage[email.value]===pass.value){
-            alert("Welcome!");
-        }
-    }
-    else{
-        if(username.value===null || email.value===null || pass.value===null || passRepeat.value===null ){
-            alert("please fill the inputs correctly.");
-        }
-        else if(localStorage[email.value]!=null || localStorage[pass.value]!=null){
-            alert("Email or Username tekrari ast");
-        }
-        else if(pass.value!==passRepeat.value){
-            alert("pleas input same password");
-        }
-        else{
-            localStorage.setItem(username.value,pass.value);
-            localStorage.setItem(email.value,pass.value);
-            alert("Done. now you are one of us");
-        }
-    }
-    clear();
-});
+// btnSubmit[0].addEventListener('click',function(){
+//     if(btnActive[0].innerText==='Log in'){
+//         if(email.value===null || pass.value===null){
+//             alert("please fill the inputs correctly.");
+//         }
+//         else if(localStorage[email.value]!==pass.value){
+//             alert("Username/Email or Password is not correct.");
+//         }
+//         else if(localStorage[email.value]===pass.value){
+//             alert("Welcome!");
+//         }
+//     }
+//     else{
+//         if(username.value===null || email.value===null || pass.value===null || passRepeat.value===null ){
+//             alert("please fill the inputs correctly.");
+//         }
+//         else if(localStorage[email.value]!=null || localStorage[pass.value]!=null){
+//             alert("Email or Username tekrari ast");
+//         }
+//         else if(pass.value!==passRepeat.value){
+//             alert("pleas input same password");
+//         }
+//         else{
+//             localStorage.setItem(username.value,pass.value);
+//             localStorage.setItem(email.value,pass.value);
+//             alert("Done. now you are one of us");
+//         }
+//     }
+//     clear();
+// });
 
 function clear(){
     username.value="";

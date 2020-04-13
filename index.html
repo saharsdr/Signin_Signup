@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="en">
 <!-- Alt + shift + F -->
 
@@ -9,82 +10,88 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/bootstrap-grid.min.css">
     <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap">
+    <link rel="stylesheet" href="Style/style.css">
     <script src="https://kit.fontawesome.com/6583edbadb.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+    <script src="Script/jquery-3.5.0.min.js"></script>
+    <script src="Script/script.js"></script>
 </head>
 
 <body class="signin-body">
-    <div class="row no-gutters">
-        <div class="col-md-3 col-2 signin-side">
-            <h3 class="signin-side-h3">Follow</h3>
-            <ul class="icons">
-                <li><i class="fab fa-github"></i><h4>Github</h4></li>
-                <li><i class="fab fa-twitter"></i><h4>Twetter</h4></li>
-                <li><i class="fab fa-instagram"></i><h4>Instagram</h4></li>
-                <li><i class="fab fa-dribbble"></i><h4>Driblle</h4></li>
-            </ul>
-            <ul class="signin-side-btn">
-                <li class="active">Log in</li>
-                <li>Sign Up</li>
-            </ul>
-        </div>
-        <div id="anim" class="col-md-9 col-10 signin-main anime">
-            <div class="container signin-container">
-                <div class="signin-top">
-                    <i></i>
-                    <h1>Zeit</h1>
-                </div>
-                <form class="signin-form">
-                    <div class="form-group hide">
-                        <input type="text" class="form-control form-control-lg" id="username" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" class="form-control form-control-lg" id="email" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control form-control-lg" id="password"
-                            placeholder="Password">
-                    </div>
-                    <div class="form-group hide">
-                        <input type="password" class="form-control form-control-lg" id="passwordrepeat"
-                            placeholder="Password Repeat">
-                    </div>
-                    <button type="button" class="btn btn-primary btn-start btn-lg">Get Started</button>
-
-                    <div class="row center">
-                        <div class="col-5 signin-line"></div>
-                        <div class="col-2 signin-circle">&#9898;</div>
-                        <div class="col-5 signin-line"></div>
-                    </div>
-                    <div class="row center">
-                        <div class="col-5">
-                            <h3>Facebook</h3>
-                        </div>
-                        <div class="col"></div>
-                        <div class="col-5">
-                            <h3>Google+</h3>
-                        </div>
-                    </div>
-                </form>
+<div class="row no-gutters">
+    <div class="col-md-3 col-2 signin-side">
+        <h3 class="signin-side-h3">Follow</h3>
+        <ul class="icons">
+            <li><i class="fab fa-github"></i><h4>Github</h4></li>
+            <li><i class="fab fa-twitter"></i><h4>Twetter</h4></li>
+            <li><i class="fab fa-instagram"></i><h4>Instagram</h4></li>
+            <li><i class="fab fa-dribbble"></i><h4>Driblle</h4></li>
+        </ul>
+        <ul class="signin-side-btn">
+            <li id="buttonLogIn" class="active">Log in</li>
+            <li id="buttonSignUp">Sign Up</li>
+        </ul>
+    </div>
+    <div id="anim" class="col-md-9 col-10 signin-main anime">
+        <div class="container signin-container">
+            <div class="signin-top">
+                <i></i>
+                <h1>Zeit</h1>
             </div>
+            <form class="signin-form">
+                <div class="form-group hide">
+                    <input type="text" class="form-control form-control-lg" id="username" name="username"
+                           placeholder="Username">
+                    <p class="error" style="color: red; text-decoration: underline ;"></p>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="Email"
+                           required>
+                    <p class="error" style="color: red; text-decoration: underline;"></p>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-lg" id="password" name="password"
+                           placeholder="Password" required>
+                </div>
+                <div class="form-group hide">
+                    <input type="password" class="form-control form-control-lg" id="passwordrepeat"
+                           name="passwordrepeat" placeholder="Password Repeat">
+                </div>
+                <button type="submit" class="btn btn-primary btn-start btn-lg" id="buttonSubmit">Get Started</button>
+
+                <div class="row center">
+                    <div class="col-5 signin-line"></div>
+                    <div class="col-2 signin-circle">&#9898;</div>
+                    <div class="col-5 signin-line"></div>
+                </div>
+                <div class="row center">
+                    <div class="col-5">
+                        <h3>Facebook</h3>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col-5">
+                        <h3>Google+</h3>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-    <script src="bootstrap/bootstrap.min.js"></script>
-    <script src="programing.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>
+<script src="Script/programing.js"></script>
 </body>
 
 </html>
