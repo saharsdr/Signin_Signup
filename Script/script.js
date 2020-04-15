@@ -83,7 +83,7 @@ $(document).ready(function () {
 
     ///on "Submit button" click;
     $("#buttonSubmit").click(function () {
-        if (formType === "sign in") {
+        if (formType === "sign up") {
             if ($("#password").val() !== $("#passwordrepeat").val())
                 InvalidInput("passwordrepeat", "Password confirmation doesn't match Password");
             else
