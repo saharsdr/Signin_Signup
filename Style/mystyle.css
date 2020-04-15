@@ -1,0 +1,7 @@
+.signin-form input:invalid {
+    border-bottom: 1px solid red;
+}
+
+.signin-form input:valid {
+    border-bottom: 1px solid greenyellow;
+}
