@@ -71,34 +71,34 @@ function UserDataAlreadyExists($conn, $name, $value) {
     return 1;
 }
 
-///get "database connection" and User's "username" and "password" then check if user is "valid".
-function UserValidation($conn, $username, $password) {
+///get "database connection" and User's "email" and "password" then check if user is "valid".
+function UserValidation($conn, $email, $password) {
     global $databaseName;
     try {
-        ///sql query to select password of user with "username = $username".
+        ///sql query to select password of user with "email = $email".
         $sql = "SELECT password
                 FROM $databaseName.users
-                WHERE (users.username = '$username');
+                WHERE (users.email = '$email');
             ";
         ///execute query and save "query result" in "$result".
         $result = $conn->query($sql);
-        ///if user with "username = $username" exists then check password.
+        ///if user with "email = $email" exists then check password.
         if ($result->num_rows > 0) {
-            ///get "hash of User's password" from query result.
-            $userPassword = $result->fetch_assoc()["password"];
-            ///if "$password" is "right" return "1".
-            if (password_verify($password, $userPassword) === true)
+            ///get User's "hashed password" from query result.
+            $hashedPassword = $result->fetch_assoc()["password"];
+            ///if "$password" match "hashed password" return "1".
+            if (password_verify($password, $hashedPassword) === true)
                 return 1;
         }
     } ///return "-1" if unexpected error occur.
     catch (\Throwable $throwable) {
         return -1;
     }
-    ///if "$username" did not existes in database or "$password" was "wrong" return "-2";
+    ///if "user" did not existes in database or "$password" was "wrong" return "-2";
     return -2;
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["function"])) {
     switch ($_POST["function"]) {
         case "UserDataAlreadyExists":
         {
@@ -114,6 +114,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ConnectionClose($conn);
             break;
         }
+        case "UserValidation":
+        {
+            $conn = ConnectionOpen($databaseServer, $databaseUsername, $databasePassword);
+            echo UserValidation($conn, $_POST["email"], $_POST["password"]);
+            ConnectionClose($conn);
+            break;
+        }
     }
-}
+} else
+    echo "error wrong request";
 //var_dump($_REQUEST);
